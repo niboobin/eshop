@@ -5,6 +5,7 @@ writing my code. For example i could try
 using a more  descriptive and meaningful names for 
 classes, methods, variables, and parameters to enhance 
 readability and understanding of the code.
+Maintain consistent formatting and indentation throughout the codebase to improve readability and maintainability.
 
 # Reflection 2
 
@@ -13,3 +14,4 @@ of my code.Regarding the number of unit tests in a class, there isn't a strict r
 , including normal cases, edge cases, and error cases.
 
 
+2. while the new functional test suite follows the same structure as existing ones, there are opportunities to improve code cleanliness and maintainability by addressing potential issues such as code duplication, clarity of test cases, handling magic numbers/strings, error handling, and readability. By refactoring and applying these improvements, the code quality can be enhanced without reducing its effectiveness.

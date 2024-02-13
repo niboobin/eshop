@@ -21,5 +21,10 @@ of my code.Regarding the number of unit tests in a class, there isn't a strict r
 
 # Module 2
 
-1. p
-2. 
+## Reflection
+
+1. The `ProductController` class was using field injection by directly annotating the service field with `@Autowired`. I refactored the code to use constructor injection instead of field injection. Constructor injection is generally considered 
+a better practice as it makes dependencies explicit and facilitates better unit testing. And i got the wrong argument on assertEquals(). I did assertEquals(actualValue, expectedValue) where it is supposed to be the other way around.
+2. I think my code has met the definition of CI/CD. I integrated my app with testing tools and static code analysis tools
+   such as SonarQube, JaCoCo, JUnit, and OSSF Scorecard to identify potential issues, enforce coding standards, and maintain code quality. 
+   For CD, i used koyeb to deploy my app to automate the deployment process so that changes can be quickly and reliably deployed to production. 

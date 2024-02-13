@@ -9,11 +9,14 @@ import java.util.List;
 
 @Repository
 public class ProductRepository {
-    private  List<Product> productData = new ArrayList<>();
+    private List<Product> productData = new ArrayList<>();
 
-    public Product create(Product product) {
+    public void create(Product product) {
         productData.add(product);
-        return product;
+    }
+
+    public boolean delete(Product product) {
+        return productData.remove(product);
     }
 
     public Product edit(String id, Product product) {
@@ -24,17 +27,13 @@ public class ProductRepository {
             Product currentProduct = products.next();
             if (currentProduct.getProductId().equals(id)) {
                 product.setProductId(currentProduct.getProductId());
-                break;
+                return productData.set(index, product);
             }
         }
 
-        return productData.set(index, product);
-
+        return null;
     }
 
-    public boolean delete(Product product) {
-        return productData.remove(product);
-    }
     public Product get(String id) {
         Iterator<Product> products = findAll();
 

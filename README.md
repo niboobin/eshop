@@ -27,4 +27,20 @@ of my code.Regarding the number of unit tests in a class, there isn't a strict r
 a better practice as it makes dependencies explicit and facilitates better unit testing. And i got the wrong argument on assertEquals(). I did assertEquals(actualValue, expectedValue) where it is supposed to be the other way around.
 2. I think my code has met the definition of CI/CD. I integrated my app with testing tools and static code analysis tools
    such as SonarQube, JaCoCo, JUnit, and OSSF Scorecard to identify potential issues, enforce coding standards, and maintain code quality. 
-   For CD, i used koyeb to deploy my app to automate the deployment process so that changes can be quickly and reliably deployed to production. 
+   For CD, i used koyeb to deploy my app to automate the deployment process so that changes can be quickly and reliably deployed to production.
+
+# Module 3
+
+## Reflection
+
+## Solid Principle Application
+
+- SRP
+  - The CarRepository class has a single responsibility, 
+   which is to handle the persistence operations related to the Car entity. Each method within the class is responsible for a specific operation related to car data management (create, find, update, delete).
+
+- OCP
+  - In `ProductService.java`, the create method can check if `productId` has a value of null and will generate a random UUID.
+
+- LSP
+  - In `ProductController.java` The classes `CarController` and `ProductController` are separated to 

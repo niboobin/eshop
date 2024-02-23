@@ -43,4 +43,15 @@ a better practice as it makes dependencies explicit and facilitates better unit 
   - In `ProductService.java`, the create method can check if `productId` has a value of null and will generate a random UUID.
 
 - LSP
-  - In `ProductController.java` The classes `CarController` and `ProductController` are separated to 
+  - In `ProductController.java` The classes `CarController` and `ProductController` are separated and now focuses on
+  a specific type object and there is no inheritance relationship between them.
+
+## Principles Applied to the Project
+
+- Single Responsibility Principle (SRP): Each class in the project has a single responsibility or reason to change. For example, a CarRepository class is responsible for handling persistence operations related to cars, while a CarController class is responsible for managing HTTP requests and responses related to cars.
+- Open/Closed Principle (OCP): The project is designed to be open for extension but closed for modification. For instance, new features can be added by extending existing classes or introducing new ones without altering the existing codebase. 
+- Liskov Substitution Principle (LSP): Subtypes must be substitutable for their base types without affecting the correctness of the program. The separation of ProductController and CarController ensures that each controller can be replaced with a subtype (e.g., a specialized car controller) without impacting the overall behavior of the system.
+
+## Disadvantages of Not Applying SOLID Principles
+
+- Without SRP, OCP, and LSP, the project may become difficult to maintain. Changes or updates in one part of the codebase may require modifications in multiple other places, increasing the risk of errors and bugs.

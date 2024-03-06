@@ -55,3 +55,13 @@ a better practice as it makes dependencies explicit and facilitates better unit 
 ## Disadvantages of Not Applying SOLID Principles
 
 - Without SRP, OCP, and LSP, the project may become difficult to maintain. Changes or updates in one part of the codebase may require modifications in multiple other places, increasing the risk of errors and bugs.
+
+# Module 4
+
+## Reflection
+
+## TDD flow
+- The TDD flow proved to be useful in guiding the development process, ensuring better code quality, and facilitating easier maintenance
+
+## F.I.R.S.T principle
+- Overall, my tests has successfully followed the F.I.R.S.T. principle

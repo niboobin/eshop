@@ -54,7 +54,7 @@ class PaymentServiceTest {
         HashMap<String, String> paymentDataVoucher = new HashMap<>();
         HashMap<String, String> paymentDataCOD = new HashMap<>();
 
-        paymentDataVoucher.put("voucherCode", "ESHOP-12345678");
+        paymentDataVoucher.put("voucherCode", "ESHOP1234ABC5678");
         paymentDataCOD.put("address", "Apartemen Melati Taman");
         paymentDataCOD.put("deliveryFee", "10000");
 
@@ -67,7 +67,7 @@ class PaymentServiceTest {
     @Test
     void testAddPayment() {
         Payment payment = payments.get(1);
-        Order order = orders.get(1); // Mock Order object
+        Order order = orders.get(1);
         doReturn(payment).when(paymentRepository).add(any(Payment.class));
 
         Payment result = paymentService.addPayment(order, payment.getMethod(), payment.getPaymentData());
@@ -92,7 +92,7 @@ class PaymentServiceTest {
     @Test
     void testGetPaymentByIdIfNotFound() {
         HashMap<String, String> paymentData = new HashMap<>();
-        paymentData.put("voucherCode", "ESHOP-123");
+        paymentData.put("voucherCode", "ESHOP1234ABC5678");
         Payment payment = new Payment("zczc", PaymentMethods.VOUCHER.getValue(), paymentData);
         doThrow(NoSuchElementException.class).when(paymentRepository).getPaymentById(payment.getId());
 
@@ -178,8 +178,8 @@ class PaymentServiceTest {
     @Test
     void testPayIfMethodIsBankTransfer() {
         HashMap<String, String> paymentData = new HashMap<>();
-        paymentData.put("bankName", "Jank Bago");
-        paymentData.put("referenceCode", "1234567890");
+        paymentData.put("address", "Apartemen Melati Taman");
+        paymentData.put("deliveryFee", "10000");
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b", PaymentMethods.CASHONDELIVERY.getValue(), paymentData);
         Order order = orders.get(1);
         Order editedOrder = new Order(order.getId(), order.getProducts(), order.getOrderTime(), order.getAuthor(), PaymentStatus.SUCCESS.getValue());

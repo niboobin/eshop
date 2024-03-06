@@ -41,7 +41,7 @@ public class PaymentRepositoryTest {
                 products, 1708570000L, "Bambang Sudrajat");
         orders.add(order3);
 
-        paymentDataVoucher.put("voucherCode", "ESHOP-123");
+        paymentDataVoucher.put("voucherCode", "ESHOP1234ABC5678");
         paymentDataCOD.put("address", "Apartemen Melati Taman");
         paymentDataCOD.put("deliveryFee", "10000");
 

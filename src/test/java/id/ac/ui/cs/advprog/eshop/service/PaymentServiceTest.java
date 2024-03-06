@@ -176,7 +176,7 @@ class PaymentServiceTest {
     }
 
     @Test
-    void testPayIfMethodIsBankTransfer() {
+    void testPayIfMethodIsCashOnDelivery() {
         HashMap<String, String> paymentData = new HashMap<>();
         paymentData.put("address", "Apartemen Melati Taman");
         paymentData.put("deliveryFee", "10000");
@@ -214,10 +214,10 @@ class PaymentServiceTest {
     }
 
     @Test
-    void testPayIfMethodIsBankTransferAndPaymentDataIsInvalid() {
+    void testPayIfMethodIsCashOnDeliveryAndPaymentDataIsInvalid() {
         HashMap<String, String> paymentData = new HashMap<>();
-        paymentData.put("bankName", "");
-        paymentData.put("referenceCode", "");
+        paymentData.put("address", "");
+        paymentData.put("deliveryFee", "");
         Payment payment = new Payment("13652556-012a-4c07-b546-54eb1396d79b", PaymentMethods.CASHONDELIVERY.getValue(), paymentData);
         Order order = orders.get(1);
         Order editedOrder = new Order(order.getId(), order.getProducts(), order.getOrderTime(), order.getAuthor(), OrderStatus.FAILED.getValue());

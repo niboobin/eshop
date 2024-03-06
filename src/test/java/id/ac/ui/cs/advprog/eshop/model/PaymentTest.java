@@ -2,7 +2,8 @@ package id.ac.ui.cs.advprog.eshop.model;
 
 
 import org.junit.jupiter.api.Test;
-
+import enums.PaymentMethods;
+import enums.PaymentStatus;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
